@@ -6,6 +6,7 @@ import com.almasb.javafx.serialization.std.*
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.module.SimpleModule
 import com.fasterxml.jackson.databind.node.DoubleNode
+import com.fasterxml.jackson.databind.node.IntNode
 import com.fasterxml.jackson.module.kotlin.convertValue
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import javafx.scene.Node
@@ -48,4 +49,8 @@ fun JsonNode.toNode(): Node {
 
 fun JsonNode.toDouble(): Double {
     return (this as DoubleNode).numberValue() as Double
+}
+
+fun JsonNode.toInt(): Int {
+    return (this as IntNode).numberValue() as Int
 }
